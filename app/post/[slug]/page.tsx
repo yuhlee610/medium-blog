@@ -10,7 +10,7 @@ import CommentForm from '@/app/components/CommentForm';
 
 export const revalidate = 60;
 
-export async function staticParams() {
+async function staticParams() {
   const posts = await sanitySdk.getAllSlugs();
 
   return posts.map((post) => ({ slug: post.slug.current }));
